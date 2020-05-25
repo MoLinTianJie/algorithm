@@ -77,25 +77,122 @@ import Foundation
 //typealias Maze = [[Cell]]
 
 
-let _queue = DispatchQueue.init(label: "cell-com.hem")
-_queue.async {
-    print("输出one")
+//let _queue = DispatchQueue.init(label: "cell-com.hem")
+//_queue.async {
+//    print("输出one")
+//
+//    var array = [String]()
+//    for i in 0..<10000 {
+//        array.append("\(i)")
+//        print(array[i])
+//    }
+//
+//    _queue.async(execute: .init(qos: .default, flags: .barrier, block: {
+//        print("输出two")
+//    }))
+//
+//}
+//
+//_queue.async {
+//    print("输出thre")
+//}
+
+protocol LinkListProtocol {
     
-    var array = [String]()
-    for i in 0..<10000 {
-        array.append("\(i)")
-        print(array[i])
-    }
+    associatedtype Itme
     
-    _queue.async(execute: .init(qos: .default, flags: .barrier, block: {
-        print("输出two")
-    }))
+    var isEmpty:Bool { get }
+    
+    var length:Int { get }
+    
+    func clear()
+    
+    func get(i:Int) -> Itme
+
+    // 在线性表中添加一个元素
+    func insert(t:Itme)
+    
+    func insert(i:Int, t:Itme)
+    
+    func remove(i:Int)
     
 }
 
-_queue.async {
-    print("输出thre")
+
+class LinkList<T> : LinkListProtocol {
+    
+    typealias Itme = T
+    
+    /// 链表
+    class Node<T> {
+        var item:T?
+        var nextNode:Node?
+        init(item:T?,nextNode:Node?) {
+            self.item = item
+            self.nextNode = nextNode
+        }
+    }
+    
+    // 记录头结点
+    private var head:Node<Any>?
+    
+    // 记录链接表的长度
+    private var N:Int?
+    
+    
+    private func linkList() {
+        // 初始化头部
+        head = Node(item: nil, nextNode: nil)
+        
+        
+        
+    }
+    
+    var isEmpty: Bool {
+        return (N ?? -1) > 0
+    }
+    
+    var length: Int {
+        return N ?? -1
+    }
+    
+    func clear() {
+        
+        
+    }
+    
+    func get(i: Int) -> T {
+        
+        
+    }
+    
+    func insert(t: T) {
+        
+    }
+    
+    func insert(i: Int, t: T) {
+        
+        
+    }
+    
+    func remove(i: Int) {
+        
+        
+        
+    }
+    
+    
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
