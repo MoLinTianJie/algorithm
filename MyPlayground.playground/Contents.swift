@@ -97,92 +97,120 @@ import Foundation
 //    print("输出thre")
 //}
 
-protocol LinkListProtocol {
-    
-    associatedtype Itme
-    
-    var isEmpty:Bool { get }
-    
-    var length:Int { get }
-    
-    func clear()
-    
-    func get(i:Int) -> Itme
+//protocol LinkListProtocol {
+//
+//    associatedtype Itme
+//
+//    var isEmpty:Bool { get }
+//
+//    var length:Int { get }
+//
+//    func clear()
+//
+//    func get(i:Int) -> Itme
+//
+//    // 在线性表中添加一个元素
+//    func insert(t:Itme)
+//
+//    func insert(i:Int, t:Itme)
+//
+//    func remove(i:Int)
+//
+//}
+//
+//
+//class LinkList<T> : LinkListProtocol {
+//
+//    typealias Itme = T
+//
+//    /// 链表
+//    class Node<T> {
+//        var item:T?
+//        var nextNode:Node?
+//        init(item:T?,nextNode:Node?) {
+//            self.item = item
+//            self.nextNode = nextNode
+//        }
+//    }
+//
+//    // 记录头结点
+//    private var head:Node<Any>?
+//
+//    // 记录链接表的长度
+//    private var N:Int?
+//
+//
+//    private func linkList() {
+//        // 初始化头部
+//        head = Node(item: nil, nextNode: nil)
+//
+//
+//
+//    }
+//
+//    var isEmpty: Bool {
+//        return (N ?? -1) > 0
+//    }
+//
+//    var length: Int {
+//        return N ?? -1
+//    }
+//
+//    func clear() {
+//
+//
+//    }
+//
+//    func get(i: Int) -> T {
+//
+//
+//    }
+//
+//    func insert(t: T) {
+//
+//    }
+//
+//    func insert(i: Int, t: T) {
+//
+//
+//    }
+//
+//    func remove(i: Int) {
+//
+//
+//
+//    }
+//
+//
+//}
 
-    // 在线性表中添加一个元素
-    func insert(t:Itme)
-    
-    func insert(i:Int, t:Itme)
-    
-    func remove(i:Int)
-    
+class Persion: NSObject {
+    var age:Int?
+}
+
+class Student: Persion {
+    var name:String?
 }
 
 
-class LinkList<T> : LinkListProtocol {
-    
-    typealias Itme = T
-    
-    /// 链表
-    class Node<T> {
-        var item:T?
-        var nextNode:Node?
-        init(item:T?,nextNode:Node?) {
-            self.item = item
-            self.nextNode = nextNode
-        }
-    }
-    
-    // 记录头结点
-    private var head:Node<Any>?
-    
-    // 记录链接表的长度
-    private var N:Int?
-    
-    
-    private func linkList() {
-        // 初始化头部
-        head = Node(item: nil, nextNode: nil)
-        
-        
-        
-    }
-    
-    var isEmpty: Bool {
-        return (N ?? -1) > 0
-    }
-    
-    var length: Int {
-        return N ?? -1
-    }
-    
-    func clear() {
-        
-        
-    }
-    
-    func get(i: Int) -> T {
-        
-        
-    }
-    
-    func insert(t: T) {
-        
-    }
-    
-    func insert(i: Int, t: T) {
-        
-        
-    }
-    
-    func remove(i: Int) {
-        
-        
-        
-    }
-    
-    
-}
+let object = Student.init()
+
+
+let object1 = Student.init()
+
+
+let cls = object.superclass
+
+
+print(cls!,class_getSuperclass(Student.self)?.class(), class_isMetaClass(NSObject.self))
+
+
+
+
+
+
+
+
 
 
 
