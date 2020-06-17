@@ -15,6 +15,9 @@
 		D067FE0A247E75C800B1EC18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D067FE09247E75C800B1EC18 /* main.m */; };
 		D067FE14247E75C800B1EC18 /* OC_BasePrincipleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D067FE13247E75C800B1EC18 /* OC_BasePrincipleTests.m */; };
 		D067FE1F247E75C800B1EC18 /* OC_BasePrincipleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D067FE1E247E75C800B1EC18 /* OC_BasePrincipleUITests.m */; };
+		D08EE7E624912CB700B9E4EF /* DDPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = D08EE7E524912CB700B9E4EF /* DDPerson.m */; };
+		D08EE7E924912CDD00B9E4EF /* DDPerson+DDPerson_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = D08EE7E824912CDD00B9E4EF /* DDPerson+DDPerson_Test.m */; };
+		D08EE7EC24912D4A00B9E4EF /* DDPerson+test2.m in Sources */ = {isa = PBXBuildFile; fileRef = D08EE7EB24912D4A00B9E4EF /* DDPerson+test2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		D067FE1A247E75C800B1EC18 /* OC-BasePrincipleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OC-BasePrincipleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D067FE1E247E75C800B1EC18 /* OC_BasePrincipleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OC_BasePrincipleUITests.m; sourceTree = "<group>"; };
 		D067FE20247E75C800B1EC18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D08EE7E424912CB700B9E4EF /* DDPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDPerson.h; sourceTree = "<group>"; };
+		D08EE7E524912CB700B9E4EF /* DDPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDPerson.m; sourceTree = "<group>"; };
+		D08EE7E724912CDD00B9E4EF /* DDPerson+DDPerson_Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DDPerson+DDPerson_Test.h"; sourceTree = "<group>"; };
+		D08EE7E824912CDD00B9E4EF /* DDPerson+DDPerson_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DDPerson+DDPerson_Test.m"; sourceTree = "<group>"; };
+		D08EE7EA24912D4A00B9E4EF /* DDPerson+test2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DDPerson+test2.h"; sourceTree = "<group>"; };
+		D08EE7EB24912D4A00B9E4EF /* DDPerson+test2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DDPerson+test2.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +87,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D0664641248FDE2C00B6257E /* Load方法的本质 */ = {
+			isa = PBXGroup;
+			children = (
+				D08EE7E424912CB700B9E4EF /* DDPerson.h */,
+				D08EE7E524912CB700B9E4EF /* DDPerson.m */,
+				D08EE7E724912CDD00B9E4EF /* DDPerson+DDPerson_Test.h */,
+				D08EE7E824912CDD00B9E4EF /* DDPerson+DDPerson_Test.m */,
+				D08EE7EA24912D4A00B9E4EF /* DDPerson+test2.h */,
+				D08EE7EB24912D4A00B9E4EF /* DDPerson+test2.m */,
+			);
+			path = "Load方法的本质";
+			sourceTree = "<group>";
+		};
+		D0664642248FDE5300B6257E /* Catetory本质 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Catetory本质";
+			sourceTree = "<group>";
+		};
 		D067FDEB247E75C600B1EC18 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +130,8 @@
 		D067FDF6247E75C600B1EC18 /* OC-BasePrinciple */ = {
 			isa = PBXGroup;
 			children = (
+				D0664642248FDE5300B6257E /* Catetory本质 */,
+				D0664641248FDE2C00B6257E /* Load方法的本质 */,
 				D067FDF7247E75C600B1EC18 /* AppDelegate.h */,
 				D067FDF8247E75C600B1EC18 /* AppDelegate.m */,
 				D067FDFD247E75C600B1EC18 /* ViewController.h */,
@@ -262,6 +293,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D08EE7E924912CDD00B9E4EF /* DDPerson+DDPerson_Test.m in Sources */,
+				D08EE7EC24912D4A00B9E4EF /* DDPerson+test2.m in Sources */,
+				D08EE7E624912CB700B9E4EF /* DDPerson.m in Sources */,
 				D067FDFF247E75C600B1EC18 /* ViewController.m in Sources */,
 				D067FDF9247E75C600B1EC18 /* AppDelegate.m in Sources */,
 				D067FE0A247E75C800B1EC18 /* main.m in Sources */,

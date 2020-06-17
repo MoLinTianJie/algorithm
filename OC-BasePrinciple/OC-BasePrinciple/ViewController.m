@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
-@interface Person : NSObject
+@interface Person1 : NSObject
 {
     @public
     int _age;
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation Person
+@implementation Person1
 
 - (void)personInstanceMethod {
     
@@ -35,17 +35,10 @@
     
 }
 
-
-- (void)didChangeValueForKey:(NSString *)key {
-    
-    
-    
-}
-
 @end
 
 
-@interface Student : Person
+@interface Student : Person1
 {
     int _time;
 }
@@ -61,13 +54,20 @@
 - (void)personInstanceMethod {
     
     _time = 100;
+}
+
+- (void)setStr:(NSMutableString *)str {
+    if (str != _str) {
+        [self willChangeValueForKey:@"str"];
+        _str = str;
+        [self didChangeValueForKey:@"str"];
+    }
+}
+
++ (BOOL)automaticallyNotifiesObserversForKey:(NSString *)key {
     
-    NSString *name = @"my name is clees";
-    self.str = @"7980900-0";
+    return true;
     
-//    NSLog(@"这是student 调用的类%d",_time);
-    
-    NSLog(self.str);
 }
 
 
@@ -82,8 +82,8 @@
 
 @interface ViewController ()
 
-@property (nonatomic, strong) Person *person1;
-@property (nonatomic, strong) Person *person2;
+@property (nonatomic, strong) Person1 *person1;
+@property (nonatomic, strong) Person1 *person2;
 
 @end
 
@@ -108,18 +108,32 @@
 //    [stu personInstanceMethod];
     
     
-    self.person1 = [[Person alloc] init];
-    self.person2 = [[Person alloc] init];
+    self.person1 = [[Person1 alloc] init];
+    self.person2 = [[Person1 alloc] init];
     
-//    [self.person1 addObserver:self forKeyPath:@"no" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:nil];
+    [self.person1 addObserver:self forKeyPath:@"no" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:nil];
     
+    [self printClassMethods:self.person1];
     
 }
 
+- (void)printClassMethods:(NSObject*)objc {
+    unsigned int outCount = 0;
+    Method *methods = class_copyMethodList(object_getClass(objc), &outCount);
+    for (int i = 0; i < outCount; i++) {
+        SEL sel = method_getName(methods[i]);
+        NSString *methodName = NSStringFromSelector(sel);
+        NSLog(@"\n %d === %@", i ,methodName);
+    }
+    free(methods);
+}
+
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-    self.person1.no = 1;
-    self.person2.no = 10;
+//    self.person1.no = 1;
+    [self.person1 setValue:@(1) forKey:@"no"];
+//    self.person2.no = 10;
     
 }
 
