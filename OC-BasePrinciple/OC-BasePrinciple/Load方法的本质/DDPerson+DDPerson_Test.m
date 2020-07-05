@@ -11,13 +11,7 @@
 @implementation DDPerson (DDPerson_Test)
 
 +(void)load {
-    
     NSLog(@"DDPerson_Test load is run ");
-    
 }
-
-
-
-
 
 @end
